@@ -17,7 +17,7 @@ describe('My Shopping Bag Page', () => {
     beforeEach(() => {
         cy.visit('https://www.pomelofashion.com/th/en/')
         // cy.clearCookies()
-        cy.clearLocalStorage()
+        //cy.clearLocalStorage()
         category.goToCategoryPage()
         category.clickAllDressesCategory()
         itemlist.clickFirstItemInPage()
