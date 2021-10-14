@@ -1,5 +1,3 @@
-### Merchant manager
-
 #### Setup
 
 Install packages.
