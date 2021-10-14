@@ -40,7 +40,7 @@ class MyShoppingBagPage {
     }
 
     deleteItems() {
-        cy.get('.cart-product .cart-remove').click({ multiple: true })
+        cy.get('.cart-product .cart-remove').click({multiple: true})
     }
 
     fillInPromotionCode(promocode) {

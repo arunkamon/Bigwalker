@@ -17,7 +17,7 @@ describe('My Shopping Bag Page', () => {
     beforeEach(() => {
         cy.visit('https://www.pomelofashion.com/th/en/')
         // cy.clearCookies()
-        // cy.clearLocalStorage()
+        cy.clearLocalStorage()
         category.goToCategoryPage()
         category.clickAllDressesCategory()
         itemlist.clickFirstItemInPage()
@@ -37,13 +37,6 @@ describe('My Shopping Bag Page', () => {
         shoppingbag.adjustSize(size)
         shoppingbag.getItemSizeSelected().should('have.text', size)
     })
-    it('able to delete product items', async () => {
-        cy.wait(2000)
-        // cy.get('.cart-product .cart-remove').click({ multiple: true })
-        await shoppingbag.deleteItems()
-        cy.wait(2000)
-        shoppingbag.getProductInCart().should('not.exist')
-    })
     it('able to fill-in and click apply promo code', () => {
         const promocode = 'abc'
         shoppingbag.fillInPromotionCode(promocode)
@@ -53,7 +46,8 @@ describe('My Shopping Bag Page', () => {
     it('able to proceed to checkout', () => {
         shoppingbag.clickProceedToCheckoutButton()
     })
-
-
-
+    it('able to delete product items', async () => {
+        shoppingbag.deleteItems()
+        shoppingbag.getProductInCart().should('not.exist')
+    })
 })
