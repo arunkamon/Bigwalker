@@ -46,7 +46,7 @@ describe('My Shopping Bag Page', () => {
     it('able to proceed to checkout', () => {
         shoppingbag.clickProceedToCheckoutButton()
     })
-    it('able to delete product items', async () => {
+    it('able to delete product items', () => {
         shoppingbag.deleteItems()
         shoppingbag.getProductInCart().should('not.exist')
     })
